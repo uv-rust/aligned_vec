@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-fn aligned_vec<T: Copy>(size: usize, capacity: usize, align: usize, touch: Option<T>) -> Vec<T> {
+pub fn aligned_vec<T: Copy>(size: usize, capacity: usize, align: usize, touch: Option<T>) -> Vec<T> {
     unsafe {
         if size == 0 {
             Vec::<T>::new()
@@ -23,7 +23,7 @@ fn aligned_vec<T: Copy>(size: usize, capacity: usize, align: usize, touch: Optio
     }
 }
 //-----------------------------------------------------------------------------
-fn init_aligned_vec<T: Copy>(size: usize, capacity: usize, align: usize, x: T) -> Vec<T> {
+pub fn init_aligned_vec<T: Copy>(size: usize, capacity: usize, align: usize, x: T) -> Vec<T> {
     unsafe {
         if size == 0 {
             Vec::<T>::new()
@@ -41,7 +41,7 @@ fn init_aligned_vec<T: Copy>(size: usize, capacity: usize, align: usize, x: T) -
     }
 }
 //-----------------------------------------------------------------------------
-fn page_aligned_vec<T: Copy>(size: usize, capacity: usize, touch: Option<T>, page_locked: bool) -> Vec<T> {
+pub fn page_aligned_vec<T: Copy>(size: usize, capacity: usize, touch: Option<T>, page_locked: bool) -> Vec<T> {
     let v = aligned_vec::<T>(size, capacity, page_size::get(), touch);
     if page_locked {
        unsafe {
