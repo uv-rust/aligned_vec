@@ -5,8 +5,11 @@ edition = "2021"
 authors = ["Ugo Varetto"]
 descrition = "Aligned and optionally page-locked vectors"
 license = "MIT"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+keywords = ["memory", "aligned", "page_locked"]
+readme = "Readme.md"
+repository = "https://github.com/uv-rust/aligned_vec"
+homepage = "https://github.com/uv-rust/aligned_vec"
+categories = ["memory-management"]
 
 [dependencies]
 page_size = "0.4"
